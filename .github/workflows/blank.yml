@@ -13,11 +13,11 @@ on:
         default: master
 env:
   NAME_GLOBAL: 'test-global'
-  LIST_GLOBAL: |
-    list-1
-    list-2
-    list-3
-    test-w
+  #LIST_GLOBAL: |
+  #  list-1
+  #  list-2
+  #  list-3
+  #  test-w
 
 jobs:
   # This workflow contains a single job called "build"
