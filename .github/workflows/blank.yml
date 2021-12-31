@@ -37,5 +37,5 @@ jobs:
           echo ${{ github.event.repository.name }}
       - name: test-condition
         #if: contains(env.LIST_GLOBAL, ${{ github.event.repository.name }} )
-        if: contains(fromJson('[ "bloups", "test-wf" ]'), github.event.repository.name)
+        if: contains(fromJson('[ "bloups", "test-w" ]'), github.event.repository.name)
         run: echo 'OK its in the list'
