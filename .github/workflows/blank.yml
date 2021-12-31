@@ -37,7 +37,7 @@ jobs:
         run: echo 'OK its in the list'
   condition:
     # The type of runner that the job will run on
-    if: contains(fromJson(env.GLOBAL_LIST), github.event.repository.name)
+    if: contains(fromJson('[ "joliBO" ]'), github.event.repository.name)
     runs-on: ubuntu-latest
     steps:
       - run: echo "OK job with condition"
