@@ -13,11 +13,7 @@ on:
         default: master
 env:
   NAME_GLOBAL: 'test-global'
-  #LIST_GLOBAL: |
-  #  list-1
-  #  list-2
-  #  list-3
-  #  test-w
+  GLOBAL_LIST: '[ "bloups", "test-w" ]'
 
 jobs:
   # This workflow contains a single job called "build"
@@ -37,5 +33,5 @@ jobs:
           echo ${{ github.event.repository.name }}
       - name: test-condition
         #if: contains(env.LIST_GLOBAL, ${{ github.event.repository.name }} )
-        if: contains(fromJson('[ "bloups", "test-w" ]'), github.event.repository.name)
+        if: contains(fromJson(env.GLOBAL_LIST), github.event.repository.name)
         run: echo 'OK its in the list'
