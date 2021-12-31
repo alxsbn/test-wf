@@ -17,6 +17,7 @@ env:
     'list-1'
     'list-2'
     'list-3'
+    'test-wf'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,5 +35,9 @@ jobs:
       - run: |
           echo ${{ env.NAME }}
           echo ${{ env.NAME_GLOBAL }}
-          echo ${{ env.LIST_GLOBAL }}
+          echo ${{ github.event.repository.name }}
+      - name: test-condition
+        if: contains(env.LIST_GLOBAL, ${{ github.event.repository.name }} )
+        run: |
+          echo 'OK it's in the list'
 
