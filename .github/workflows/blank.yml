@@ -13,6 +13,10 @@ on:
         default: master
 env:
   NAME_GLOBAL: 'test-global'
+  LIST_GLOBAL: |
+    'list-1'
+    'list-2'
+    'list-3'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -30,4 +34,5 @@ jobs:
       - run: |
           echo ${{ env.NAME }}
           echo ${{ env.NAME_GLOBAL }}
+          echo ${{ env.LIST_GLOBAL }}
 
