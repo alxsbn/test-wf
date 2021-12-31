@@ -13,7 +13,7 @@ on:
         default: master
 env:
   NAME_GLOBAL: 'test-global'
-  GLOBAL_LIST: '[ "bloups", "test-w" ]'
+  GLOBAL_LIST: '[ "bloups", "test-w", "test-wf" ]'
 
 jobs:
   # This workflow contains a single job called "build"
